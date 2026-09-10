@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matchwork Roofing & Exteriors — Business Card Design Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #152232;
+      --navy-dark: #0d1622;
+      --gold: #c5a059;
+      --slate: #5a6b7c;
+      --slate-light: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .options-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .option-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .option-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+
+    .option-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(197, 160, 89, 0.2);
+      color: #e2c07a;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+    }
+
+    .option-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* EXACT 3.5" x 2.0" CARD RATIO (scaled for web viewing: 420px x 240px) */
+    .bcard {
+      width: 420px;
+      height: 240px;
+      border-radius: 6px;
+      position: relative;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 28px;
+      overflow: hidden;
+    }
+
+    /* FRONT THEMES */
+    .bcard-white {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .bcard-navy {
+      background: #152232;
+      color: #ffffff;
+    }
+
+    .bcard-navy-dark {
+      background: #0e1722;
+      color: #ffffff;
+    }
+
+    /* TYPOGRAPHY ELEMENTS */
+    .brand-logo-serif {
+      font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #111827;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-logo-serif.white {
+      color: #ffffff;
+    }
+
+    .brand-subline {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #4b5563;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .brand-subline.light {
+      color: #94a3b8;
+    }
+
+    .brand-tagline-italic {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 13.5px;
+      color: #374151;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-tagline-italic.light {
+      color: #cbd5e1;
+    }
+
+    .contact-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .contact-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 3px;
+    }
+
+    .contact-details {
+      font-size: 11px;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #e2e8f0;
+    }
+
+    .contact-details .phone {
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-details .web {
+      color: #94a3b8;
+    }
+
+    .trades-bar {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .trades-bar.gold {
+      color: #c5a059;
+    }
+
+    .notes-callout {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid #c5a059;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 24px 12px; }
+      .header h1 { font-size: 24px; }
+      .header p { font-size: 13px; }
+      .option-card { padding: 20px 14px; }
+      .option-title { font-size: 17px; flex-direction: column; align-items: flex-start; gap: 6px; }
+      .bcard {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        min-height: 210px;
+        padding: 20px 18px;
+      }
+      .brand-logo-serif { font-size: 22px !important; letter-spacing: 3px !important; }
+      .brand-subline { font-size: 8px !important; letter-spacing: 2.5px !important; }
+      .brand-tagline-italic { font-size: 12px !important; }
+      .contact-name { font-size: 17px !important; }
+      .contact-details { font-size: 10.5px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>MATCHWORK ROOFING &amp; EXTERIORS</h1>
+    <p>Business Card Design Comparison &bull; Luxury Brand Positioning</p>
+  </div>
+
+  <div class="options-grid">
+
+    <!-- OPTION A (CLASSIC MONOCHROME LAYOUT) -->
+    <div class="option-card">
+      <div class="option-header">
+        <div>
+          <div class="option-title">
+            Option A: Classic Monochrome Layout
+            <span class="badge">Clean Minimalist</span>
+          </div>
+          <div class="option-desc">Crisp white front with standard tracking &bull; Deep Navy back with centered all-white contact hierarchy.</div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div>
+          <div class="card-label">Front (Crisp White)</div>
+          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
+            <div>
+              <div class="brand-logo-serif">MATCHWORK</div>
+              <div class="brand-subline">ROOFING &amp; EXTERIORS</div>
+            </div>
+            <div class="brand-tagline-italic">Architectural Roofing. Flawless Craftsmanship.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-label">Back (Deep Navy)</div>
+          <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
+            <div style="margin-top: 10px;">
+              <div class="contact-name">Jordan Peplinski</div>
+              <div class="contact-title">OWNER</div>
+            </div>
+            <div class="contact-details">
+              <div class="phone">(614) 906-0557</div>
+              <div>jordan@matchworkroofing.com</div>
+              <div class="web">matchworkroofing.com</div>
+            </div>
+            <div class="trades-bar">Roofing &bull; Siding &bull; Gutters &bull; Masonry</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-callout">
+        <strong>Style Profile:</strong> Timeless, straightforward luxury. All contact details and trades are rendered in crisp clean white against the deep navy backdrop.
+      </div>
+    </div>
+
+    <!-- OPTION B (THE REFINED MASTER) -->
+    <div class="option-card" style="border-color: rgba(197, 160, 89, 0.6); box-shadow: 0 10px 30px rgba(197, 160, 89, 0.15);">
+      <div class="option-header">
+        <div>
+          <div class="option-title">
+            Option B: The Refined Master
+            <span class="badge">Signature Gold Accent</span>
+          </div>
+          <div class="option-desc">Heavy cotton white front with generous letterspacing &bull; Deep Navy back with warm gold OWNER title &amp; trade scope bar.</div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div>
+          <div class="card-label">Front (Heavy Cotton White)</div>
+          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 24px;">
+            <div>
+              <div class="brand-logo-serif" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
+              <div class="brand-subline" style="letter-spacing: 3.5px;">ROOFING &amp; EXTERIORS</div>
+            </div>
+            <div class="brand-tagline-italic" style="font-size: 14px; color: #374151;">Architectural Roofing. Flawless Craftsmanship.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-label">Back (Signature Navy &amp; Warm Gold)</div>
+          <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
+            <div style="margin-top: 8px;">
+              <div class="contact-name" style="font-size: 20px;">Jordan Peplinski</div>
+              <div class="contact-title" style="letter-spacing: 2.5px; color: #c5a059;">OWNER</div>
+            </div>
+            <div class="contact-details" style="gap: 4px; display: flex; flex-direction: column;">
+              <div class="phone" style="font-size: 13px; font-weight: 700; color: #ffffff;">(614) 906-0557</div>
+              <div style="font-size: 11px; color: #cbd5e1;">jordan@matchworkroofing.com</div>
+              <div class="web" style="font-size: 11px; color: #94a3b8;">matchworkroofing.com</div>
+            </div>
+            <div class="trades-bar gold" style="letter-spacing: 2.5px; font-size: 8px;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-callout">
+        <strong>Style Profile:</strong> Premium architectural identity. The subtle warm gold accents on the title and bottom trade line add executive depth and polish.
+      </div>
+    </div>
+
+    <!-- OPTION C (ARCHITECTURAL STUDIO GRID) -->
+    <div class="option-card">
+      <div class="option-header">
+        <div>
+          <div class="option-title">
+            Option C: Architectural Studio Grid
+            <span class="badge">Modern European Studio</span>
+          </div>
+          <div class="option-desc">Structured, asymmetrical layout &bull; Clean typographic tension &bull; High-end design-build firm aesthetic.</div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div>
+          <div class="card-label">Front (Ultra-Clean Centered)</div>
+          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 14px;">
+            <div>
+              <div class="brand-logo-serif" style="font-size: 28px; letter-spacing: 5px;">MATCHWORK</div>
+              <div class="brand-subline" style="font-size: 8.5px; letter-spacing: 4px; color: #1e293b;">ROOFING &amp; EXTERIORS</div>
+            </div>
+            <div style="width: 30px; height: 1px; background: #c5a059; margin: 4px auto;"></div>
+            <div class="brand-tagline-italic" style="font-size: 13px; color: #64748b;">Architectural Roofing. Flawless Craftsmanship.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-label">Back (Asymmetric Architectural Grid)</div>
+          <div class="bcard bcard-navy-dark" style="justify-content: space-between; padding: 26px 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <div class="contact-name" style="font-size: 18px;">Jordan Peplinski</div>
+                <div class="contact-title" style="letter-spacing: 2px;">OWNER</div>
+              </div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
+                MW
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div class="contact-details">
+                <div class="phone" style="font-size: 12px; margin-bottom: 2px;">(614) 906-0557</div>
+                <div style="font-size: 10px; color: #94a3b8;">jordan@matchworkroofing.com</div>
+                <div class="web" style="font-size: 10px;">matchworkroofing.com</div>
+              </div>
+              <div style="text-align: right; font-family: 'Plus Jakarta Sans'; font-size: 7.5px; letter-spacing: 1.5px; color: #64748b; line-height: 1.6; text-transform: uppercase;">
+                ROOFING<br>SIDING<br>GUTTERS<br>MASONRY
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-callout">
+        <strong>Best for:</strong> Standing out distinctly from any other contractor in Central Ohio. Reads like an elite architecture/design-build studio.
+      </div>
+    </div>
+
+    <!-- OPTION D (REVERSE TWO-TONE WITH WRITABLE BACK) -->
+    <div class="option-card">
+      <div class="option-header">
+        <div>
+          <div class="option-title">
+            Option D: Executive Contrast (Dark Front / Writable Cotton Back)
+            <span class="badge">Functional &amp; Premium</span>
+          </div>
+          <div class="option-desc">Signature Navy front for bold first impression &bull; Crisp white writable back for insurance claim / estimate notes.</div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div>
+          <div class="card-label">Front (Deep Navy Statement)</div>
+          <div class="bcard bcard-navy" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
+            <div>
+              <div class="brand-logo-serif white" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
+              <div class="brand-subline light" style="letter-spacing: 3.5px; color: #cbd5e1;">ROOFING &amp; EXTERIORS</div>
+            </div>
+            <div class="brand-tagline-italic light" style="font-size: 13.5px; color: #cbd5e1;">Architectural Roofing. Flawless Craftsmanship.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-label">Back (Heavy White Cotton — Easy to write on)</div>
+          <div class="bcard bcard-white" style="align-items: center; justify-content: space-between; text-align: center; border: 1px solid #e2e8f0;">
+            <div style="margin-top: 10px;">
+              <div class="contact-name" style="color: #0f172a;">Jordan Peplinski</div>
+              <div class="contact-title" style="color: #64748b;">OWNER</div>
+            </div>
+            <div class="contact-details" style="color: #1e293b;">
+              <div class="phone" style="color: #0f172a; font-size: 13px;">(614) 906-0557</div>
+              <div style="color: #475569;">jordan@matchworkroofing.com</div>
+              <div class="web" style="color: #64748b;">matchworkroofing.com</div>
+            </div>
+            <div class="trades-bar" style="color: #94a3b8;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-callout">
+        <strong>Field Advantage:</strong> In restoration roofing and insurance claims, homeowners and adjusters frequently write notes, test square counts, or claim numbers on the back of business cards. A crisp white uncoated back makes writing effortless.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
