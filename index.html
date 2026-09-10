@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Matchwork Roofing & Exteriors — Business Card Design Options</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,40 +27,41 @@
       color: var(--text);
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .header {
-      max-width: 1200px;
-      margin: 0 auto 40px;
+      max-width: 960px;
+      margin: 0 auto 36px;
       text-align: center;
     }
 
     .header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
+      font-size: clamp(22px, 5vw, 32px);
       letter-spacing: 1px;
       margin-bottom: 8px;
     }
 
     .header p {
       color: var(--text-muted);
-      font-size: 15px;
+      font-size: clamp(13px, 3.5vw, 15px);
     }
 
     .options-grid {
-      max-width: 1200px;
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 40px;
     }
 
     .option-card {
       background: var(--card-bg);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 16px;
-      padding: 30px;
+      padding: clamp(18px, 4vw, 30px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
@@ -74,12 +75,13 @@
     }
 
     .option-title {
-      font-size: 20px;
+      font-size: clamp(16px, 4vw, 20px);
       font-weight: 700;
       color: #fff;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .badge {
@@ -92,21 +94,31 @@
       background: rgba(197, 160, 89, 0.2);
       color: #e2c07a;
       border: 1px solid rgba(197, 160, 89, 0.4);
+      white-space: nowrap;
     }
 
     .option-desc {
       color: var(--text-muted);
-      font-size: 14px;
-      margin-top: 4px;
+      font-size: clamp(12.5px, 3vw, 14px);
+      margin-top: 6px;
+      line-height: 1.5;
     }
 
     .cards-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 24px;
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+    }
+
+    .card-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 420px;
     }
 
     .card-label {
@@ -119,18 +131,30 @@
       font-weight: 600;
     }
 
-    /* EXACT 3.5" x 2.0" CARD RATIO (scaled for web viewing: 420px x 240px) */
+    /* SCALED PROPORTIONAL CARD FRAME (3.5" x 2.0" -> 420px x 240px) */
+    .card-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 420 / 240;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+      background: #0f172a;
+    }
+
     .bcard {
       width: 420px;
       height: 240px;
-      border-radius: 6px;
-      position: relative;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: top left;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 24px 28px;
-      overflow: hidden;
+      box-sizing: border-box;
     }
 
     /* FRONT THEMES */
@@ -248,26 +272,6 @@
       color: #cbd5e1;
       line-height: 1.5;
     }
-
-    @media (max-width: 480px) {
-      body { padding: 24px 12px; }
-      .header h1 { font-size: 24px; }
-      .header p { font-size: 13px; }
-      .option-card { padding: 20px 14px; }
-      .option-title { font-size: 17px; flex-direction: column; align-items: flex-start; gap: 6px; }
-      .bcard {
-        width: 100%;
-        max-width: 360px;
-        height: auto;
-        min-height: 210px;
-        padding: 20px 18px;
-      }
-      .brand-logo-serif { font-size: 22px !important; letter-spacing: 3px !important; }
-      .brand-subline { font-size: 8px !important; letter-spacing: 2.5px !important; }
-      .brand-tagline-italic { font-size: 12px !important; }
-      .contact-name { font-size: 17px !important; }
-      .contact-details { font-size: 10.5px !important; }
-    }
   </style>
 </head>
 <body>
@@ -292,30 +296,34 @@
       </div>
 
       <div class="cards-row">
-        <div>
+        <div class="card-item">
           <div class="card-label">Front (Crisp White)</div>
-          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
-            <div>
-              <div class="brand-logo-serif">MATCHWORK</div>
-              <div class="brand-subline">ROOFING &amp; EXTERIORS</div>
+          <div class="card-frame">
+            <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
+              <div>
+                <div class="brand-logo-serif">MATCHWORK</div>
+                <div class="brand-subline">ROOFING &amp; EXTERIORS</div>
+              </div>
+              <div class="brand-tagline-italic">Architectural Roofing. Flawless Craftsmanship.</div>
             </div>
-            <div class="brand-tagline-italic">Architectural Roofing. Flawless Craftsmanship.</div>
           </div>
         </div>
 
-        <div>
+        <div class="card-item">
           <div class="card-label">Back (Deep Navy)</div>
-          <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
-            <div style="margin-top: 10px;">
-              <div class="contact-name">Jordan Peplinski</div>
-              <div class="contact-title">OWNER</div>
+          <div class="card-frame">
+            <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
+              <div style="margin-top: 10px;">
+                <div class="contact-name">Jordan Peplinski</div>
+                <div class="contact-title">OWNER</div>
+              </div>
+              <div class="contact-details">
+                <div class="phone">(614) 906-0557</div>
+                <div>jordan@matchworkroofing.com</div>
+                <div class="web">matchworkroofing.com</div>
+              </div>
+              <div class="trades-bar">Roofing &bull; Siding &bull; Gutters &bull; Masonry</div>
             </div>
-            <div class="contact-details">
-              <div class="phone">(614) 906-0557</div>
-              <div>jordan@matchworkroofing.com</div>
-              <div class="web">matchworkroofing.com</div>
-            </div>
-            <div class="trades-bar">Roofing &bull; Siding &bull; Gutters &bull; Masonry</div>
           </div>
         </div>
       </div>
@@ -338,30 +346,34 @@
       </div>
 
       <div class="cards-row">
-        <div>
+        <div class="card-item">
           <div class="card-label">Front (Heavy Cotton White)</div>
-          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 24px;">
-            <div>
-              <div class="brand-logo-serif" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
-              <div class="brand-subline" style="letter-spacing: 3.5px;">ROOFING &amp; EXTERIORS</div>
+          <div class="card-frame">
+            <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 24px;">
+              <div>
+                <div class="brand-logo-serif" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
+                <div class="brand-subline" style="letter-spacing: 3.5px;">ROOFING &amp; EXTERIORS</div>
+              </div>
+              <div class="brand-tagline-italic" style="font-size: 14px; color: #374151;">Architectural Roofing. Flawless Craftsmanship.</div>
             </div>
-            <div class="brand-tagline-italic" style="font-size: 14px; color: #374151;">Architectural Roofing. Flawless Craftsmanship.</div>
           </div>
         </div>
 
-        <div>
+        <div class="card-item">
           <div class="card-label">Back (Signature Navy &amp; Warm Gold)</div>
-          <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
-            <div style="margin-top: 8px;">
-              <div class="contact-name" style="font-size: 20px;">Jordan Peplinski</div>
-              <div class="contact-title" style="letter-spacing: 2.5px; color: #c5a059;">OWNER</div>
+          <div class="card-frame">
+            <div class="bcard bcard-navy" style="align-items: center; justify-content: space-between; text-align: center;">
+              <div style="margin-top: 8px;">
+                <div class="contact-name" style="font-size: 20px;">Jordan Peplinski</div>
+                <div class="contact-title" style="letter-spacing: 2.5px; color: #c5a059;">OWNER</div>
+              </div>
+              <div class="contact-details" style="gap: 4px; display: flex; flex-direction: column;">
+                <div class="phone" style="font-size: 13px; font-weight: 700; color: #ffffff;">(614) 906-0557</div>
+                <div style="font-size: 11px; color: #cbd5e1;">jordan@matchworkroofing.com</div>
+                <div class="web" style="font-size: 11px; color: #94a3b8;">matchworkroofing.com</div>
+              </div>
+              <div class="trades-bar gold" style="letter-spacing: 2.5px; font-size: 8px;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
             </div>
-            <div class="contact-details" style="gap: 4px; display: flex; flex-direction: column;">
-              <div class="phone" style="font-size: 13px; font-weight: 700; color: #ffffff;">(614) 906-0557</div>
-              <div style="font-size: 11px; color: #cbd5e1;">jordan@matchworkroofing.com</div>
-              <div class="web" style="font-size: 11px; color: #94a3b8;">matchworkroofing.com</div>
-            </div>
-            <div class="trades-bar gold" style="letter-spacing: 2.5px; font-size: 8px;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
           </div>
         </div>
       </div>
@@ -384,39 +396,43 @@
       </div>
 
       <div class="cards-row">
-        <div>
+        <div class="card-item">
           <div class="card-label">Front (Ultra-Clean Centered)</div>
-          <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 14px;">
-            <div>
-              <div class="brand-logo-serif" style="font-size: 28px; letter-spacing: 5px;">MATCHWORK</div>
-              <div class="brand-subline" style="font-size: 8.5px; letter-spacing: 4px; color: #1e293b;">ROOFING &amp; EXTERIORS</div>
+          <div class="card-frame">
+            <div class="bcard bcard-white" style="align-items: center; justify-content: center; text-align: center; gap: 14px;">
+              <div>
+                <div class="brand-logo-serif" style="font-size: 28px; letter-spacing: 5px;">MATCHWORK</div>
+                <div class="brand-subline" style="font-size: 8.5px; letter-spacing: 4px; color: #1e293b;">ROOFING &amp; EXTERIORS</div>
+              </div>
+              <div style="width: 30px; height: 1px; background: #c5a059; margin: 4px auto;"></div>
+              <div class="brand-tagline-italic" style="font-size: 13px; color: #64748b;">Architectural Roofing. Flawless Craftsmanship.</div>
             </div>
-            <div style="width: 30px; height: 1px; background: #c5a059; margin: 4px auto;"></div>
-            <div class="brand-tagline-italic" style="font-size: 13px; color: #64748b;">Architectural Roofing. Flawless Craftsmanship.</div>
           </div>
         </div>
 
-        <div>
+        <div class="card-item">
           <div class="card-label">Back (Asymmetric Architectural Grid)</div>
-          <div class="bcard bcard-navy-dark" style="justify-content: space-between; padding: 26px 30px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div>
-                <div class="contact-name" style="font-size: 18px;">Jordan Peplinski</div>
-                <div class="contact-title" style="letter-spacing: 2px;">OWNER</div>
+          <div class="card-frame">
+            <div class="bcard bcard-navy-dark" style="justify-content: space-between; padding: 26px 30px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <div class="contact-name" style="font-size: 18px;">Jordan Peplinski</div>
+                  <div class="contact-title" style="letter-spacing: 2px;">OWNER</div>
+                </div>
+                <div style="font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
+                  MW
+                </div>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
-                MW
-              </div>
-            </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div class="contact-details">
-                <div class="phone" style="font-size: 12px; margin-bottom: 2px;">(614) 906-0557</div>
-                <div style="font-size: 10px; color: #94a3b8;">jordan@matchworkroofing.com</div>
-                <div class="web" style="font-size: 10px;">matchworkroofing.com</div>
-              </div>
-              <div style="text-align: right; font-family: 'Plus Jakarta Sans'; font-size: 7.5px; letter-spacing: 1.5px; color: #64748b; line-height: 1.6; text-transform: uppercase;">
-                ROOFING<br>SIDING<br>GUTTERS<br>MASONRY
+              <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div class="contact-details">
+                  <div class="phone" style="font-size: 12px; margin-bottom: 2px;">(614) 906-0557</div>
+                  <div style="font-size: 10px; color: #94a3b8;">jordan@matchworkroofing.com</div>
+                  <div class="web" style="font-size: 10px;">matchworkroofing.com</div>
+                </div>
+                <div style="text-align: right; font-family: 'Plus Jakarta Sans'; font-size: 7.5px; letter-spacing: 1.5px; color: #64748b; line-height: 1.6; text-transform: uppercase;">
+                  ROOFING<br>SIDING<br>GUTTERS<br>MASONRY
+                </div>
               </div>
             </div>
           </div>
@@ -441,30 +457,34 @@
       </div>
 
       <div class="cards-row">
-        <div>
+        <div class="card-item">
           <div class="card-label">Front (Deep Navy Statement)</div>
-          <div class="bcard bcard-navy" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
-            <div>
-              <div class="brand-logo-serif white" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
-              <div class="brand-subline light" style="letter-spacing: 3.5px; color: #cbd5e1;">ROOFING &amp; EXTERIORS</div>
+          <div class="card-frame">
+            <div class="bcard bcard-navy" style="align-items: center; justify-content: center; text-align: center; gap: 20px;">
+              <div>
+                <div class="brand-logo-serif white" style="letter-spacing: 4px; font-size: 28px;">MATCHWORK</div>
+                <div class="brand-subline light" style="letter-spacing: 3.5px; color: #cbd5e1;">ROOFING &amp; EXTERIORS</div>
+              </div>
+              <div class="brand-tagline-italic light" style="font-size: 13.5px; color: #cbd5e1;">Architectural Roofing. Flawless Craftsmanship.</div>
             </div>
-            <div class="brand-tagline-italic light" style="font-size: 13.5px; color: #cbd5e1;">Architectural Roofing. Flawless Craftsmanship.</div>
           </div>
         </div>
 
-        <div>
+        <div class="card-item">
           <div class="card-label">Back (Heavy White Cotton — Easy to write on)</div>
-          <div class="bcard bcard-white" style="align-items: center; justify-content: space-between; text-align: center; border: 1px solid #e2e8f0;">
-            <div style="margin-top: 10px;">
-              <div class="contact-name" style="color: #0f172a;">Jordan Peplinski</div>
-              <div class="contact-title" style="color: #64748b;">OWNER</div>
+          <div class="card-frame">
+            <div class="bcard bcard-white" style="align-items: center; justify-content: space-between; text-align: center; border: 1px solid #e2e8f0;">
+              <div style="margin-top: 10px;">
+                <div class="contact-name" style="color: #0f172a;">Jordan Peplinski</div>
+                <div class="contact-title" style="color: #64748b;">OWNER</div>
+              </div>
+              <div class="contact-details" style="color: #1e293b;">
+                <div class="phone" style="color: #0f172a; font-size: 13px;">(614) 906-0557</div>
+                <div style="color: #475569;">jordan@matchworkroofing.com</div>
+                <div class="web" style="color: #64748b;">matchworkroofing.com</div>
+              </div>
+              <div class="trades-bar" style="color: #94a3b8;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
             </div>
-            <div class="contact-details" style="color: #1e293b;">
-              <div class="phone" style="color: #0f172a; font-size: 13px;">(614) 906-0557</div>
-              <div style="color: #475569;">jordan@matchworkroofing.com</div>
-              <div class="web" style="color: #64748b;">matchworkroofing.com</div>
-            </div>
-            <div class="trades-bar" style="color: #94a3b8;">ROOFING &bull; SIDING &bull; GUTTERS &bull; MASONRY</div>
           </div>
         </div>
       </div>
@@ -475,6 +495,26 @@
     </div>
 
   </div>
+
+  <script>
+    function fitCards() {
+      const frames = document.querySelectorAll('.card-frame');
+      frames.forEach(frame => {
+        const card = frame.querySelector('.bcard');
+        if (card) {
+          const frameWidth = frame.clientWidth;
+          const scale = frameWidth / 420;
+          card.style.transform = `scale(${scale})`;
+        }
+      });
+    }
+    window.addEventListener('resize', fitCards);
+    window.addEventListener('orientationchange', fitCards);
+    window.addEventListener('DOMContentLoaded', fitCards);
+    fitCards();
+    setTimeout(fitCards, 50);
+    setTimeout(fitCards, 300);
+  </script>
 
 </body>
 </html>
