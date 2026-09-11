@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <title>Matchwork Roofing & Exteriors — Business Card Design Options</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +32,16 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* PREVENT MOBILE SAFARI FROM TURNING PHONE NUMBERS BLUE */
+    a[href^="tel"], .phone, [x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
     .header {
       max-width: 960px;
       margin: 0 auto 36px;
@@ -47,6 +58,26 @@
     .header p {
       color: var(--text-muted);
       font-size: clamp(13px, 3.5vw, 15px);
+      margin-bottom: 16px;
+    }
+
+    .pdf-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: #e2c07a;
+      padding: 8px 18px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .pdf-cta:hover {
+      background: rgba(197, 160, 89, 0.3);
+      color: #fff;
     }
 
     .options-grid {
@@ -279,6 +310,7 @@
   <div class="header">
     <h1>MATCHWORK ROOFING &amp; EXTERIORS</h1>
     <p>Business Card Design Comparison &bull; Luxury Brand Positioning</p>
+    <a href="Matchwork-Business-Cards-Options-Review.pdf" target="_blank" class="pdf-cta">📄 Open / Download High-Res PDF</a>
   </div>
 
   <div class="options-grid">
